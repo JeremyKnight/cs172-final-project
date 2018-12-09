@@ -9,6 +9,7 @@ using namespace std;
 //1=p1 is there
 //2=p2 is there
 
+// the issue is that x and y are flipped,
 class GameBoard{
     private:
         vector< vector<int> > board;
@@ -16,6 +17,7 @@ class GameBoard{
         GameBoard(){
             //generate number of rows
             for(int x=0;x<6; x++){
+                
                 vector<int> temp;
                 //generate number of colums
                 for(int y=0;y<7;y++){
@@ -31,6 +33,7 @@ class GameBoard{
         
         //number corresponds with type of number: 1 or 2
         bool check4InRow(int n) {
+            
             int count=0;
             for(int x=0;x<7;x++){
                 for(int y=0;y<6;y++){
@@ -49,11 +52,11 @@ class GameBoard{
         }
 
         bool check4inColum(int n) {
-
+            return false;
         }
 
         bool check4inDiagonal(int n) {
-
+            return false;
         }
         void printBoard() {
             for(int x=0;x<6;x++){
