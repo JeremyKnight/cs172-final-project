@@ -52,21 +52,26 @@ class GameBoard{
         }
 
         bool check4InRow(int n) {
-            int count=0;
-
-            if(count==4) {
-                return true;
+           for(int x=0;x<4;x++){
+                for(int y=0;y<6;y++){
+                    if(getPlace(x,y)==n){
+                        if(getPlace(x+1,y)==n && getPlace(x+2,y)==n && getPlace(x+3,y)==n){
+                            return true;
+                        }
+                    }
+                }
             }
-            return false;
+            return false; 
         }
 
         bool check4InDiagonal(int n) {
             return false;
         }
+
         void printBoard() {
-            for(int y=0;y<6;y++){
-                for(int x=0;x<7;x++){
-                    cout<< getPlace(x,y) << " ";
+            for(int x=0;x<6;x++){
+                for(int y=0;y<7;y++){
+                    cout<< board.at(x).at(y) << " ";
                 }
                 cout << endl;
             }
