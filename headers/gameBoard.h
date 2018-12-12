@@ -3,6 +3,7 @@
 #define GAMEBOARD_H
 #include "GameObject.h"
 #include <vector>
+#include <fstream>
 using namespace std;
 
 //0=nothing there
@@ -54,7 +55,7 @@ class GameBoard{
         bool check4InRow(int n) {
            for(int x=0;x<4;x++){
                 for(int y=0;y<6;y++){
-                    if(getPlace(x,y)==n){
+                    if(getPlace(x,y)==n) {
                         if(getPlace(x+1,y)==n && getPlace(x+2,y)==n && getPlace(x+3,y)==n){
                             return true;
                         }
@@ -65,6 +66,24 @@ class GameBoard{
         }
 
         bool check4InDiagonal(int n) {
+            for(int x=0;x<4;x++){
+                for(int y=3;y<6;y++){
+                    if(getPlace(x,y)==n){
+                        if(getPlace(x+1,y-1)==n && getPlace(x+2,y-2)==n && getPlace(x+3,y-3)==n){
+                            return true;
+                        }
+                    }
+                }
+            }
+            
+            for(int x=3;x<7;x++) {
+                for(int y=3;y<6;y++){
+                    if(getPlace(x,y)==n && getPlace(x-1,y-1)==n && getPlace(x-2,y-2) && getPlace(x-3,y-3)){
+                        return true;
+                    }
+                }
+            }
+            
             return false;
         }
 
@@ -92,6 +111,10 @@ class GameBoard{
              if (getPlace(x,i)==0){
                 board.at(i).at(x) = n;
              }
+        }
+
+        void filePrintBoard() {
+
         }
 
         
