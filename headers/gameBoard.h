@@ -113,8 +113,24 @@ class GameBoard{
              }
         }
 
-        void filePrintBoard() {
+        void filePrintBoard(string name) {
+            ofstream fout;
+            fout.open("finalGameBoard.txt");
 
+            if(fout.fail() ) {
+                cout << "can't open file" << endl;
+            }
+
+            fout << "final game board:" << endl;
+
+             for(int x=0;x<6;x++){
+                for(int y=0;y<7;y++){
+                    fout << board.at(x).at(y) << " ";
+                }
+                fout  << endl;
+            }
+            fout << name << " won!" << endl;
+            fout.close();
         }
 
         

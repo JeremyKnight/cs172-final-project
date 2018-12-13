@@ -11,6 +11,7 @@ bool is4InRow(GameBoard gb, int n) {
     return false;   
 }
 
+
 int main() {
     string p1Name="person 1";
     string p2Name="person 2";
@@ -22,6 +23,9 @@ int main() {
     cin >> p1Name;
     cout << "player 2 type a name: ";
     cin >> p2Name; 
+    
+    cout << p1Name << " = 1" << endl;
+    cout << p2Name << " = 2" << endl;
 
     //GAME LOOP
     while(isGameWon==false) {
@@ -39,6 +43,8 @@ int main() {
         if(is4InRow(game_board, 1)) {
             cout << p1Name <<" won!" << endl;
             isGameWon=true;
+            game_board.filePrintBoard(p1Name);
+            return 0;
         }
 
         //player2's turn
@@ -47,7 +53,6 @@ int main() {
         while(dropPlace>6 || dropPlace<0){
             cout << ": pick a number between 0, and 6 ";
             cin >> dropPlace;
-            break;
             
         }
         game_board.drop(dropPlace,2);
@@ -56,8 +61,11 @@ int main() {
         if(is4InRow(game_board, 2)) {
             cout << p2Name << " won!" << endl;
             isGameWon=true;
+            game_board.filePrintBoard(p2Name);
         }
         
     }
+
+    
 }
 
