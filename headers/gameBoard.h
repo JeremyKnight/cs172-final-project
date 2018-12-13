@@ -1,3 +1,10 @@
+/////////////////////////////////////////////////////////////////////////////
+//  Final Project CS 172
+//  Jeremy Knight
+//  Kent Jones
+//  December 13, 2018
+/////////////////////////////////////////////////////////////////////////
+
 #include <iostream>
 #ifndef GAMEBOARD_H
 #define GAMEBOARD_H
@@ -10,17 +17,17 @@ using namespace std;
 //1=p1 is there
 //2=p2 is there
 
-//x and y are flipped
+//class that creates and uses the gameBoard
 class GameBoard{
     private:
         vector< vector<int> > board;
     public:
         GameBoard(){
-            //generate number of rows
+            //generate number of colums
             for(int x=0;x<6; x++){
                 
                 vector<int> temp;
-                //generate number of colums
+                //generate number of rows
                 for(int y=0;y<7;y++){
                     temp.push_back(0);
                 }
