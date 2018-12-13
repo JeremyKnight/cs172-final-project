@@ -34,12 +34,13 @@ class GameBoard{
                 board.push_back(temp);
             }
         }
-
+        //returns the number at (x,y)
         int getPlace(int x, int y){
             return board.at(y).at(x);
         }
         
         //number corresponds with type of number: 1 or 2
+        //checks if there is 4 in a row on a colum
         bool check4InColum(int n) {
             
             int count=0;
@@ -58,7 +59,7 @@ class GameBoard{
             }
             return false;
         }
-
+        //checks if there is 4 in a row in a row
         bool check4InRow(int n) {
            for(int x=0;x<4;x++){
                 for(int y=0;y<6;y++){
@@ -71,7 +72,7 @@ class GameBoard{
             }
             return false; 
         }
-
+         //checks if there is 4 in a row in a diagonal
         bool check4InDiagonal(int n) {
             for(int x=0;x<4;x++){
                 for(int y=3;y<6;y++){
@@ -93,7 +94,7 @@ class GameBoard{
             
             return false;
         }
-
+        //prints board to terminal
         void printBoard() {
             for(int x=0;x<6;x++){
                 for(int y=0;y<7;y++){
@@ -120,6 +121,7 @@ class GameBoard{
              }
         }
 
+        //prints board to a file
         void filePrintBoard(string name) {
             ofstream fout;
             fout.open("finalGameBoard.txt");

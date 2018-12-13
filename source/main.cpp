@@ -11,6 +11,7 @@
 using namespace std;
 
 //n = number associate with player
+//checks for 4 in a row
 bool is4InRow(GameBoard gb, int n) {
     if(gb.check4InRow(n) || gb.check4InColum(n) || gb.check4InDiagonal(n)) {
         return true;
